@@ -2,7 +2,7 @@
 
 Author: David WANG
 
-Version 0.1.1
+Version 0.1.7
 
 - To extract realtime or history price data of stocks or crypto currencies. 
 (Please note this package is based on free API (e.g. Yahoo Finance). There may be a little time lag (seconds or minutes) for some market.)
@@ -16,10 +16,11 @@ pip install priceit
 
 ## Usage:
 (1) To get realtime TSLA price
+
 ```python
 from priceit import *
 
-ticker ='TSLA'
+ticker = 'TSLA'
 print(getprice(ticker))
 ```
 Result:
@@ -29,13 +30,14 @@ Result:
 (Sample above is taken during weekend, when the market is close. So it shows 'Delayed Quote'. Try this when market is open, and you can get realtime quote (almost realtime). Please allow seconds or minutes time lag for certain market.)
 
 (2) To get history daily price of BTC-USD from 2022-01-12 to 2022-01-14
+
 ```python
 from priceit import *
 
 ticker = 'BTC-USD'
 startdate = '2022-01-12'
 enddate = '2022-01-14'
-print(histprice(ticker,startdate,enddate))
+print(histprice(ticker, startdate, enddate))
 ```
 Result:
 ```
@@ -43,6 +45,7 @@ Result:
 ```
 
 (3) To get full list of stock ticker in NASDAQ, NYSE and AMEX
+
 ```python
 from priceit import *
 
@@ -55,12 +58,13 @@ Result:
 ```
 
 (4) To get financial statements
+
 ```python
 from priceit import *
 
 p = priceit()
-p.ticker ='AAPL'
-print(p.statements('Q')) # 'Q' for quarter report; 'A' for annual report
+p.ticker = 'AAPL'
+print(p.statements('Q'))  # 'Q' for quarter report; 'A' for annual report
 ```
 Result:
 ```
